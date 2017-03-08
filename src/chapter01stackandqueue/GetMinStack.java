@@ -4,24 +4,22 @@ import java.util.Stack;
 
 /**
  * Created by zhoutailiang on 2017/3/7.
- * 【题目】
+ *【题目】
  * 实现一个特殊的栈，在实现栈的基本功能的基础上，再实现返回栈中最小元素的操作。
- * 【要求】
+ *【要求】
  * 1.pop、push、getMin操作的时间复杂度都是O(1)。
  * 2.设计的类型可以使用现成的栈结构
- * 难度】
+ *【难度】
  * *
- * 【思路】
+ *【思路】
  * 1.可以用现有的栈结构，所以对于push和pop操作很容易实现，借用现有的Stack类即可，就算不借助Stack类自己实现也很容易。
  * 2.对与getMin功能，可以用一个辅助栈，用于记录每次入栈时最小元素的索引。
  * 具体步骤如下：
  * 在每次push时判断这个元素是否小于等于栈中最小元素，如果是的话，push的同是将这个元素的索引入栈到索引栈，如果不是只push元素本身到数据栈中。
  * 每次pop出栈的时候判断是否是索引栈栈顶元素，如果是的话同时pop索引栈，不是只pop数据本身。
  * 这样始终保证索引栈中的栈顶元素是数据栈中的最小值的索引，每次getMin的时候直接随机访问，时间复杂度O(1)。
- * 【卡壳点】
- * 认为栈只能pop和push，不能随机访问，随意开始没有想到。
  */
-public class getMinStack {
+public class GetMinStack {
     public static void main(String[] args) {
         //Test
         MyStack<Integer> stack = new MyStack<>();
