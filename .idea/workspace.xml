@@ -3,8 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="4f83a7b8-4cb4-4666-917b-1b8f4b59cfc7" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/chapter01stackandqueue/TwoStackImplementQueue.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/utils/Utils.java" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.ignore" afterPath="" />
       <change type="MOVED" beforePath="$PROJECT_DIR$/src/chapter01stackandqueue/getMinStack.java" afterPath="$PROJECT_DIR$/src/chapter01stackandqueue/GetMinStack.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Algorithm/chapter01stackandqueue/MyStack.class" afterPath="$PROJECT_DIR$/out/production/Algorithm/chapter01stackandqueue/MyStack.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Algorithm/chapter01stackandqueue/getMinStack.class" afterPath="$PROJECT_DIR$/out/production/Algorithm/chapter01stackandqueue/getMinStack.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
