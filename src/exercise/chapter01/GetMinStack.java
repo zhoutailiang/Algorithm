@@ -1,4 +1,4 @@
-package chapter01stackandqueue;
+package exercise.chapter01;
 
 import java.util.Stack;
 

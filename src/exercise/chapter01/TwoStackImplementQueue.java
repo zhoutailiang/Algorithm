@@ -1,8 +1,7 @@
-package chapter01stackandqueue;
+package exercise.chapter01;
 
 import utils.Utils;
 
-import java.util.Iterator;
 import java.util.Stack;
 
 /**
