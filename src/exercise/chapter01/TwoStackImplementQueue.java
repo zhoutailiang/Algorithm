@@ -23,10 +23,11 @@ import java.util.Stack;
  * 可以进一步优化，在做步骤3时，只做第一小步骤，如果下次是出队列，则直接从stack2中弹出即可。这一步优化会大大提高连续
  * 的poll操作的效率。
  */
-public class TwoStackImplementQueue {
+public class TwoStackImplementQueue<E> {
+
+    //Test
     public static void main(String[] args) {
-        //Test
-        MyQueue<Integer> myQueue = new MyQueue<>();
+        TwoStackImplementQueue<Integer> myQueue = new TwoStackImplementQueue<>();
         myQueue.add(1);
         myQueue.add(2);
         myQueue.add(3);
@@ -45,13 +46,11 @@ public class TwoStackImplementQueue {
         Utils.println(myQueue.peek());
         Utils.println(myQueue.poll());
     }
-}
 
-class MyQueue<E> {
     private Stack<E> mStack1;
     private Stack<E> mStack2;
 
-    public MyQueue() {
+    public TwoStackImplementQueue() {
         this.mStack1 = new Stack();
         this.mStack2 = new Stack();
     }

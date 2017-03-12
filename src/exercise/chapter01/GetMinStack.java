@@ -19,10 +19,11 @@ import java.util.Stack;
  * 每次pop出栈的时候判断是否是索引栈栈顶元素，如果是的话同时pop索引栈，不是只pop数据本身。
  * 这样始终保证索引栈中的栈顶元素是数据栈中的最小值的索引，每次getMin的时候直接随机访问，时间复杂度O(1)。
  */
-public class GetMinStack {
+public class GetMinStack<T extends Comparable<T>> {
+
+    //Test
     public static void main(String[] args) {
-        //Test
-        MyStack<Integer> stack = new MyStack<>();
+        GetMinStack<Integer> stack = new GetMinStack<>();
         stack.push(89);
         stack.push(67);
         stack.push(77);
@@ -35,16 +36,14 @@ public class GetMinStack {
         stack.push(1);
         System.out.println(stack.getMin());
     }
-}
 
-class MyStack<T extends Comparable<T>> {
     private int mCapacity;
     private Object[] mElements;
     private int mSize;
     private static final int DEFAULT_CAPACITY = 12;
     private Stack<Integer> mIndexStack;
 
-    public MyStack() {
+    public GetMinStack() {
         mCapacity = DEFAULT_CAPACITY;
         mElements = new Object[mCapacity];
         mSize = 0;
