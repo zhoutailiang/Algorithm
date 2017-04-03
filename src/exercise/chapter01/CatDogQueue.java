@@ -25,13 +25,13 @@ public class CatDogQueue {
         Utils.println("isCatEmpty= "+catDogQueue.isCatEmpty());
         Utils.println("isDogEmpty= "+catDogQueue.isDogEmpty());
         catDogQueue.pollCat();
-        Utils.println("isEmpty= "+catDogQueue.isEmpty());
-        Utils.println("isCatEmpty= "+catDogQueue.isCatEmpty());
-        Utils.println("isDogEmpty= "+catDogQueue.isDogEmpty());
+        Utils.println("isEmpty= " + catDogQueue.isEmpty());
+        Utils.println("isCatEmpty= " + catDogQueue.isCatEmpty());
+        Utils.println("isDogEmpty= " + catDogQueue.isDogEmpty());
         catDogQueue.pollDog();
-        Utils.println("isEmpty= "+catDogQueue.isEmpty());
-        Utils.println("isCatEmpty= "+catDogQueue.isCatEmpty());
-        Utils.println("isDogEmpty= "+catDogQueue.isDogEmpty());
+        Utils.println("isEmpty= " + catDogQueue.isEmpty());
+        Utils.println("isCatEmpty= " + catDogQueue.isCatEmpty());
+        Utils.println("isDogEmpty= " + catDogQueue.isDogEmpty());
 
     }
 
@@ -73,6 +73,7 @@ public class CatDogQueue {
                 Pet pet = (Pet) obj;
                 if (pet.getClass() == Dog.class) {
                     Utils.println(pet.getPetType());
+                    mDogCount--;
                     mAllQueue.remove();
                 }
             }
