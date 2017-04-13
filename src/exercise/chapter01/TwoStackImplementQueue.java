@@ -6,11 +6,11 @@ import java.util.Stack;
 
 /**
  * Created by zhoutailiang on 2017/3/8.
- * 【题目】
+ * [题目]
  * 编写一个类，用两个栈实现队列，支持队列的基本操作（add、poll、peek）。
- * 【难度】
+ * [难度]
  * **
- * 【思路】
+ * [思路]
  * 1.假设两个栈记为stack1和stack2。
  * 2.入队规则
  * 直接入栈stack1
@@ -24,6 +24,13 @@ import java.util.Stack;
  * 的poll操作的效率。
  */
 public class TwoStackImplementQueue<E> {
+
+    private Stack<E> mStack1;
+    private Stack<E> mStack2;
+    public TwoStackImplementQueue() {
+        this.mStack1 = new Stack();
+        this.mStack2 = new Stack();
+    }
 
     //Test
     public static void main(String[] args) {
@@ -45,14 +52,6 @@ public class TwoStackImplementQueue<E> {
         Utils.println(myQueue.poll());
         Utils.println(myQueue.peek());
         Utils.println(myQueue.poll());
-    }
-
-    private Stack<E> mStack1;
-    private Stack<E> mStack2;
-
-    public TwoStackImplementQueue() {
-        this.mStack1 = new Stack();
-        this.mStack2 = new Stack();
     }
 
     public void add(E element) {

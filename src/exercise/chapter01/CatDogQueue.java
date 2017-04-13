@@ -7,8 +7,18 @@ import java.util.LinkedList;
 
 /**
  * Created by zhoutailiang on 2017/3/12.
+ * [题目]
+ * 略
  */
 public class CatDogQueue {
+    //implement
+    private LinkedList mAllQueue;
+    private long mCatCount;
+    private long mDogCount;
+    public CatDogQueue() {
+        this.mAllQueue = new LinkedList();
+    }
+
     public static void main(String[] args) {
         CatDogQueue catDogQueue = new CatDogQueue();
         catDogQueue.add(new Dog(1));
@@ -16,32 +26,23 @@ public class CatDogQueue {
         catDogQueue.add(new Dog(3));
         catDogQueue.add(new Dog(4));
         catDogQueue.add(new Dog(5));
-        catDogQueue.add(new Cat(1));
-        catDogQueue.add(new Cat(2));
-        catDogQueue.add(new Cat(3));
-        catDogQueue.add(new Cat(4));
         catDogQueue.add(new Cat(5));
-        Utils.println("isEmpty= "+catDogQueue.isEmpty());
-        Utils.println("isCatEmpty= "+catDogQueue.isCatEmpty());
-        Utils.println("isDogEmpty= "+catDogQueue.isDogEmpty());
+        catDogQueue.add(new Cat(4));
+        catDogQueue.add(new Cat(3));
+        catDogQueue.add(new Cat(2));
+        catDogQueue.add(new Cat(1));
+        Utils.println("isEmpty= " + catDogQueue.isEmpty());
+        Utils.println("isCatEmpty= " + catDogQueue.isCatEmpty());
+        Utils.println("isDogEmpty= " + catDogQueue.isDogEmpty());
         catDogQueue.pollCat();
-        Utils.println("isEmpty= "+catDogQueue.isEmpty());
-        Utils.println("isCatEmpty= "+catDogQueue.isCatEmpty());
-        Utils.println("isDogEmpty= "+catDogQueue.isDogEmpty());
+        Utils.println("isEmpty= " + catDogQueue.isEmpty());
+        Utils.println("isCatEmpty= " + catDogQueue.isCatEmpty());
+        Utils.println("isDogEmpty= " + catDogQueue.isDogEmpty());
         catDogQueue.pollDog();
-        Utils.println("isEmpty= "+catDogQueue.isEmpty());
-        Utils.println("isCatEmpty= "+catDogQueue.isCatEmpty());
-        Utils.println("isDogEmpty= "+catDogQueue.isDogEmpty());
+        Utils.println("isEmpty= " + catDogQueue.isEmpty());
+        Utils.println("isCatEmpty= " + catDogQueue.isCatEmpty());
+        Utils.println("isDogEmpty= " + catDogQueue.isDogEmpty());
 
-    }
-
-    //implement
-    private LinkedList mAllQueue;
-    private long mCatCount;
-    private long mDogCount;
-
-    public CatDogQueue() {
-        this.mAllQueue = new LinkedList();
     }
 
     public void add(Pet pet) {
@@ -57,7 +58,7 @@ public class CatDogQueue {
         if (!isEmpty()) {
             for (Object obj : mAllQueue) {
                 Pet pet = (Pet) obj;
-                Utils.println(pet.getPetType());
+                Utils.println(pet.getType() + " poll");
             }
             mCatCount = 0;
             mDogCount = 0;
@@ -72,8 +73,10 @@ public class CatDogQueue {
                 Object obj = iterator.next();
                 Pet pet = (Pet) obj;
                 if (pet.getClass() == Dog.class) {
-                    Utils.println(pet.getPetType());
-                    mAllQueue.remove();
+                    Utils.println(pet.getType() + " poll");
+                    mDogCount--;
+                    iterator.remove();
+                    break;
                 }
             }
 
@@ -87,9 +90,10 @@ public class CatDogQueue {
                 Object obj = iterator.next();
                 Pet pet = (Pet) obj;
                 if (pet.getClass() == Cat.class) {
-                    Utils.println(pet.getPetType());
+                    Utils.println(pet.getType() + " poll");
                     mCatCount--;
-                    mAllQueue.remove();
+                    iterator.remove();
+                    break;
                 }
             }
         }
@@ -109,25 +113,25 @@ public class CatDogQueue {
 }
 
 class Pet {
-    private String type;
+    private String mType;
 
-    public Pet(String type) {
-        this.type = type;
+    public Pet(String mType) {
+        this.mType = mType;
     }
 
-    public String getPetType() {
-        return this.type;
+    public String getType() {
+        return mType;
     }
 }
 
 class Dog extends Pet {
-    public Dog(int number) {
-        super("dog " + number);
+    public Dog(int num) {
+        super("dog " + num);
     }
 }
 
 class Cat extends Pet {
-    public Cat(int number) {
-        super("cat " + number);
+    public Cat(int num) {
+        super("cat " + num);
     }
 }
