@@ -1,4 +1,4 @@
-package exercise.chapter01;
+package other;
 
 import utils.Utils;
 

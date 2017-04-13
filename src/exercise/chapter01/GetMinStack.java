@@ -26,6 +26,7 @@ public class GetMinStack<T extends Comparable<T>> {
     private Object[] mElements;
     private int mSize;
     private Stack<Integer> mIndexStack;
+
     public GetMinStack() {
         mCapacity = DEFAULT_CAPACITY;
         mElements = new Object[mCapacity];
