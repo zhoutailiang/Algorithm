@@ -13,7 +13,7 @@ import utils.Utils;
 public class GenerateWindowMaxValue {
     public static void main(String[] args) {
         int[] arr = {4, 3, 5, 4, 3, 3, 6, 7, 8, 9, 3, 6, 8, 1, 2, 1, 1, 1, 1, 1, 1, 7, 9, 90, 43, 654, 21, 54, 76, 43, 76, 98, 1};
-        int windowSize = 1;
+        int windowSize = 3;
         Utils.println(Arrays.toString(generateWindowMaxValue(arr, windowSize)));
     }
 
