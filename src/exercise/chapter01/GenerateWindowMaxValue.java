@@ -35,7 +35,7 @@ public class GenerateWindowMaxValue {
                     deque.removeFirst();
                 }
                 //2.入队列
-                if (arr[index] <= arr[deque.peekLast()]) {
+                if (arr[index] < arr[deque.peekLast()]) {
                     deque.addLast(index);
                 } else {
                     Iterator<Integer> iterator = deque.descendingIterator();
