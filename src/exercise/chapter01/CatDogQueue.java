@@ -1,9 +1,9 @@
 package exercise.chapter01;
 
-import utils.Utils;
-
 import java.util.Iterator;
 import java.util.LinkedList;
+
+import utils.Utils;
 
 /**
  * Created by zhoutailiang on 2017/3/12.
@@ -15,6 +15,7 @@ public class CatDogQueue {
     private LinkedList mAllQueue;
     private long mCatCount;
     private long mDogCount;
+
     public CatDogQueue() {
         this.mAllQueue = new LinkedList();
     }
@@ -110,28 +111,29 @@ public class CatDogQueue {
     public boolean isCatEmpty() {
         return mCatCount == 0;
     }
-}
 
-class Pet {
-    private String mType;
+    static class Pet {
+        private String mType;
 
-    public Pet(String mType) {
-        this.mType = mType;
+        public Pet(String mType) {
+            this.mType = mType;
+        }
+
+        public String getType() {
+            return mType;
+        }
     }
 
-    public String getType() {
-        return mType;
+    static class Dog extends Pet {
+        public Dog(int num) {
+            super("dog " + num);
+        }
+    }
+
+    static class Cat extends Pet {
+        public Cat(int num) {
+            super("cat " + num);
+        }
     }
 }
 
-class Dog extends Pet {
-    public Dog(int num) {
-        super("dog " + num);
-    }
-}
-
-class Cat extends Pet {
-    public Cat(int num) {
-        super("cat " + num);
-    }
-}
