@@ -12,7 +12,6 @@ public class CompressString {
         Utils.println(compressString(input));
     }
 
-    // TODO: 2017/5/16 统一i==0和！=0的情况
     public static String compressString(String str) {
         char lastChar = str.charAt(0);
         int lastCharCount = 0;
