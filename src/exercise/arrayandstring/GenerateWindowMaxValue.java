@@ -1,4 +1,4 @@
-package exercise.chapter01;
+package exercise.arrayandstring;
 
 import java.util.Arrays;
 import java.util.Deque;

@@ -1,5 +1,9 @@
 package utils;
 
+import java.util.ArrayList;
+
+import exercise.common.Node;
+
 /**
  * Created by zhoutailiang on 2017/3/8.
  */
@@ -19,5 +23,20 @@ public class Utils {
             }
             System.out.println("]");
         }
+    }
+    public static Node generateLinkedList(ArrayList<Integer> values) {
+        Node head = null;
+        Node current = null;
+        for (int i = 0; i < values.size(); i++) {
+            Node node = new Node(values.get(i));
+            if (i == 0) {
+                head = node;
+                current = head;
+            } else {
+                current.next = node;
+                current = current.next;
+            }
+        }
+        return head;
     }
 }
