@@ -14,7 +14,6 @@ public class Proxy extends Subject {
         preRequest();
         realSubject.request();
         postRequest();
-        //test
     }
 
     private void postRequest() {
